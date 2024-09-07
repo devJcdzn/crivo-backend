@@ -1,0 +1,92 @@
+### Create User
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "name": "Jean Carlos",
+  "credential": "19309908718"
+}
+
+### Get User
+GET http://localhost:3333/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Login User
+POST http://localhost:3333/auth
+Content-Type: application/json
+
+{
+  "credential": "19309908718"
+}
+
+### Create Company and members
+POST http://localhost:3333/companies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+{
+  "name": "Crivo",
+  "members": ["03333342642", "12170231781"]
+}
+
+### Create Transaction
+POST http://localhost:3333/transactions
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+{
+  "customer": "John doe",
+  "title": "Teste-Lucro-3",
+  "entry": "400000",
+  "totalAmount": "1200000",
+  "installmentsCount": "3",
+  "category_id": "2922be6f-7f02-4e76-9e5b-b1fab8747582"
+}
+
+### Get Transactions
+GET http://localhost:3333/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Get Unique Transaction
+GET http://localhost:3333/transactions/0a3957c3-fef6-4b13-9fab-8d0a9f887baf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Auto Update Transaction
+PUT http://localhost:3333/transactions/auto-update/f8cd8ac8-77dc-40c6-b4a5-2d5fd849a68c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Update Transaciton
+PUT http://localhost:3333/transactions/2e9370ca-0f11-4643-bcea-99455418baa2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+{
+  "customer": "Jean",
+  "title": "Teste 01",
+  "entry": "400000",
+  "totalAmount": "400000",
+  "installmentsCount": "0",
+  "category_id": "2922be6f-7f02-4e76-9e5b-b1fab8747582",
+  "notes": "teste-chenge by front"
+}
+
+### Delete Transaction
+DELETE http://localhost:3333/transactions/delete/f8cd8ac8-77dc-40c6-b4a5-2d5fd849a68c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Create Category
+POST http://localhost:3333/category
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+{
+  "name": "Chapas"
+}
+
+### Get Categories
+GET http://localhost:3333/category
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
+
+### Get Summary
+GET http://localhost:3333/summary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxZDQ5MDRiZC0xOTg1LTQ5Y2UtYThlZS0yZTBmYzRkMDc2NjEiLCJjb21wYW55SWQiOm51bGwsImlhdCI6MTcyMDcyNzg2MH0.yJFp91jNmbLax84yvbvGYujj94eq7sHnsQ-i3ZcRQdY
